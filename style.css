@@ -1,0 +1,199 @@
+@font-face {
+    font-family: "MS Medium Wide";
+    src: url("fonts/Mona-Sans-MediumWide.ttf");
+}
+
+@font-face {
+    font-family: "MS Regular Italic";
+    src: url("fonts/Mona-Sans-RegularItalic.ttf");
+}
+
+@font-face {
+    font-family: "MS Regular Wide";
+    src: url("fonts/Mona-Sans-RegularWide.ttf");
+}
+
+* {
+    background-color: #104165;
+    color: white;
+    margin: 0;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    background: transparent;
+}
+
+h1 {
+    font-family: "MS Regular Wide";
+}
+
+ul li:hover {
+    text-decoration: underline;
+    
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    z-index: 2;
+    position: absolute;
+    width: 100vw;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+nav, ul, li, a{
+    background-color: #052649; 
+}
+
+ul li {
+    position: relative;
+    z-index: 2;
+    margin: 0 2vw;
+    list-style: none;
+    display: inline-block;
+    margin: 2.5vh 4vw;
+    font-size: 17px;
+    background-color: #052649; 
+}
+ul li a{
+    text-decoration: none; 
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+ul li { 
+    font-family: "MS Regular Wide"; 
+    /* margin-bottom: 2.5vh; */ 
+    /* padding: 0; */ /* background-color: yellow; */ 
+    /* background: transparent;  */
+    /* margin-left: 7vw;  */
+}
+
+#title {
+    text-align: left;
+    padding-top: 40vh;
+    margin: 0 10vw;
+    width: 50%;
+}
+
+#title h1, p {
+    background: transparent;
+}
+
+#title h1 {
+    font-family: "MS Medium Wide";
+    font-size: 10vh;
+    animation-duration: 2s;
+}
+
+#title p {
+    animation-delay: 1.5s;
+    font-family: "MS Regular Italic";
+}
+
+#icon {
+    width: 4vh;
+    padding: 0;
+    margin-left: 3vw;
+}
+
+#icon:hover {
+    cursor:default;
+}
+
+.bg img{
+    position: absolute;
+    width: 30%;
+}
+
+#icon:hover {
+    cursor: pointer;
+}
+
+#aboutus{
+    position: absolute;
+    top:13vh;
+    left: 3vw;
+}
+
+#aboutus p {
+    font-family: "MS Regular Wide";
+    width: 80%;
+    animation-delay: 1s;
+}
+
+#date {
+    text-align: center;
+    padding: 45vh 0;
+    /* margin: 0 5vw; */
+    width: 100%;
+}
+
+#date h1, p {
+    background: transparent;
+}
+
+#date h1{
+    font-size: 3vw;
+}
+
+#date p {
+    font-family: "MS Regular Italic";
+    margin-top: 3vh;
+    animation-delay: 1s;
+}
+
+.team_img img{
+    position: absolute;
+    z-index: 3;
+    width: 30vw;
+    animation: imghoverout;
+    animation-duration: 1s;
+    right: 4vw;
+    top: 20vh;
+}
+
+.team_img img:hover{
+    animation-name: imghover;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+@keyframes imghover {
+    from{
+        right: 4vw;
+        top: 20vh;
+    }
+    to {
+        right: 3vw;
+        top: 15vh;
+    }
+}
+
+@keyframes imghoverout {
+    to{
+        right: 4vw;
+        top: 20vh;
+    }
+    from {
+        right: 3vw;
+        top: 15vh;
+    }
+}
+
+#contact {
+    position: fixed;
+    top: 40vh;
+    left: 3vw;
+    text-align: center;
+    width: 100%;
+}
+
+#contact p {
+    font-family: "MS Regular Wide";
+}

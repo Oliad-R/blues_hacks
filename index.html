@@ -4,28 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/bh_icon.PNG">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="icon" href="assets/blues_hacks_icon.png">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blues Hacks</title>
+    <title>Home | Blues Hacks</title>
 </head>
 <body>
-    <nav>
-        <a href="index.html"><img src="assets/bh_icon.PNG" alt="Blues Hacks Icon" id="icon"></a>
-        <ul>
+    <nav id="navbar">
+        <a href="index.html" id="icon"><img src="assets/blues_hacks_logo_transparent.png" alt="Blues Hacks Icon" draggable="false"></a>
+        <a href="#" id="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul id="navbar-links">
             <li><a href="aboutus.html">About Us</a></li>
             <li><a href="date.html">Date</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeqTZdnjVm07LiEN52XHU8a5uv9qz8nPMs1wqfxRPM_opHkIA/viewform" target="_blank">Sign Up</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScCAMNcGOzYMIZpfaW6JtmOqaQXTuC3qT14VXQPaCX1kCWhgw/viewform" target="_blank">Sign Up</a></li>
         </ul>
     </nav>
-    <div class="bg">
-        <img src="assets/Ellipse 1.svg" alt="" style="bottom: 0; left: 0;" draggable="false">
-        <img src="assets/Ellipse 2.svg" alt="" style="top: 0; right:0;" draggable="false">
-    </div>
-    <div id="title">
-        <h1 class="animate__animated animate__fadeInUp">Join the first year of Blues Hacks!</h1>
-        <p class="animate__animated animate__fadeInUp">Hack the Blues Away – Innovate, Create, Transform!</p>
+    <div id="b">
+        <section id="home">
+            <div id="home-bg">
+                <img src="assets/Screenshot (12).png" draggable="false">
+            </div>
+            <div id="title" style="overflow: hidden;">
+                <h1 class="animate__animated animate__fadeInUp">Join the first year of Blues Hacks!</h1>
+                <p class="animate__animated animate__fadeInUp">Hack the Blues Away – Innovate, Create, Transform!</p>
+            </div>
+        </section>
+            <!-- <div class="bg">
+                <img src="assets/Ellipse 1.svg" alt="" style="bottom: 0; left: 0;" draggable="false">
+                <img src="assets/Ellipse 2.svg" alt="" style="top: 0; right:0;" draggable="false">
+            </div> -->
+        <section id="insta-bg">
+            <div class="insta">
+                <h1>Follow our Instagram!</h1>
+                <p><i>@blues_hacks</i></p>
+            </div>
+            <div id="postbox">
+                <div class="post-row">
+                    <div class="post">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <footer>
+                <h1>Powered By:</h1>
+                <a href="https://www.utschools.ca/" target="_blank"><img src="assets/UTS-Logo_HiRes__CMYK.jpg" id="UTSLOGO"></a>
+            </footer>
+        </section>
     </div>
 </body>
+
+<script>
+    const toggleButton = document.getElementById("toggle-button")
+    const navbar = document.getElementById("navbar-links")
+    toggleButton.addEventListener('click', () => {
+        navbar.classList.toggle('active')
+        console.log('test')
+    })
+</script>
 </html>

@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/bh_icon.PNG">
+    <link rel="icon" href="assets/blues_hacks_icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>About Us - Blues Hacks</title>
 </head>
 <body>
-    <nav>
-        <a href="index.html"><img src="assets/bh_icon.PNG" alt="Blues Hacks Icon" id="icon"></a>
-        <ul>
+    <nav id="navbar">
+        <a href="index.html" id="icon"><img src="assets/blues_hacks_logo_transparent.png" alt="Blues Hacks Icon" draggable="false"></a>
+        <a href="#" id="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul id="navbar-links">
             <li><a href="aboutus.html">About Us</a></li>
             <li><a href="date.html">Date</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeqTZdnjVm07LiEN52XHU8a5uv9qz8nPMs1wqfxRPM_opHkIA/viewform" target="_blank">Sign Up</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScCAMNcGOzYMIZpfaW6JtmOqaQXTuC3qT14VXQPaCX1kCWhgw/viewform" target="_blank">Sign Up</a></li>
         </ul>
     </nav>
     <div class="team_img">
@@ -32,6 +37,7 @@
             Emily Xia,
             Archie Shou,
             Oliad Rundassa,
+            Ramil Jiwani,
             Kallie Zhang.
         <br><br>
         <i>Why did we start this?</i>
@@ -39,5 +45,18 @@
             We started this as an initiative for students to be able to provide them with an opportunity to innovate in a enriching environment.
         </p>
     </div>
+    <footer>
+        <h1>Powered By:</h1>
+        <a href="https://www.utschools.ca/" target="_blank"><img src="assets/UTS-Logo_HiRes__CMYK.jpg" id="UTSLOGO"></a>
+    </footer>
 </body>
+
+<script>
+    const toggleButton = document.getElementById("toggle-button")
+    const navbar = document.getElementById("navbar-links")
+    toggleButton.addEventListener('click', () => {
+        navbar.classList.toggle('active')
+        console.log('test')
+    })
+</script>
 </html>

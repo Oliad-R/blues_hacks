@@ -13,11 +13,43 @@
     src: url("fonts/Mona-Sans-RegularWide.ttf");
 }
 
+html {
+    scroll-snap-type: y mandatory;
+}
+
+section{
+    scroll-snap-align: start;
+}
+
 * {
-    background-color: #104165;
     color: white;
-    margin: 0;
-    overflow: hidden;
+    margin: 0;    
+}
+
+body {
+    background-color: rgb(16, 65, 101, 1);
+    overflow-x: hidden;
+}
+
+#timer {  
+    margin-top: 4vh;
+    font-size: 3em;
+    font-weight: 100;
+    font-family: "MS Regular Wide";
+    color: white;
+    text-shadow: 0 0 20px #48C8FF;
+    
+    div {
+        display: inline-block;
+        min-width: 90px;
+    
+        span {
+            color: #B1CDF1;
+            display: block;
+            font-size: .35em;
+            font-weight: 400;
+        }
+    }
 }
 
 a {
@@ -29,39 +61,60 @@ h1 {
     font-family: "MS Regular Wide";
 }
 
-ul li:hover {
+ul li a:before {
+    content: "";
+    position:absolute;
+    bottom: -2px;
+    height: 1px;
+    width: 0;
+    background: white;
+    border-radius: 50px;
+    transition: width 0.3s ease;
+}
+
+ul li a:hover:before{
+    color: white;
+    width: 100%;
+}
+
+/* ul li:hover {
     text-decoration: underline;
     
     cursor: pointer;
-}
+} */
 
 nav {
     display: flex;
     z-index: 2;
-    position: absolute;
+    position: fixed;
+    top:0;
     width: 100vw;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    overflow: auto;
+    /* overflow: hidden; */
 }
 
 nav, ul, li, a{
     background-color: #052649; 
 }
 
+ul {
+    margin: 0 2vw;
+}
+
 ul li {
     position: relative;
     z-index: 2;
-    margin: 0 2vw;
     list-style: none;
     display: inline-block;
-    margin: 2.5vh 4vw;
+    margin: 2.5vh 1vw;
     font-size: 17px;
     background-color: #052649; 
 }
+
 ul li a{
-    text-decoration: none; 
+    text-decoration: none;
     cursor: pointer;
     color: rgb(255, 255, 255);
 }
@@ -97,19 +150,68 @@ ul li {
 }
 
 #icon {
-    width: 4vh;
-    padding: 0;
     margin-left: 3vw;
+    padding: 0;
 }
 
-#icon:hover {
-    cursor:default;
+#icon img {
+    /* width: 10vw; */
+    height: 5vh;
+    background: transparent;
 }
 
-.bg img{
+#home-bg  {
+    z-index: -1;
+    position: absolute;
+}
+
+#home-bg img {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+#home-bg::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(16, 65, 101, 0.5); /* Change the color and opacity as needed */
+}
+
+#home {
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+}
+
+#insta-bg{
+    transform: translateY(100vh);
+    background: white;
+    height: 100vh;
+    width: 100%;
+}
+
+.insta h1, .insta i, .insta p {
+    color: black;
+    margin: 1vh 3vw;
+    justify-content: center;
+    text-align: center;
+}
+
+.insta h1 {
+    padding-top: 10vh;
+    font-size: 6vh;
+}
+
+/* .bg img{
     position: absolute;
     width: 30%;
-}
+} */
 
 #icon:hover {
     cursor: pointer;
@@ -129,8 +231,9 @@ ul li {
 
 #date {
     text-align: center;
-    padding: 45vh 0;
+    margin: 42vh 0;
     /* margin: 0 5vw; */
+    justify-content: center;
     width: 100%;
 }
 
@@ -139,7 +242,7 @@ ul li {
 }
 
 #date h1{
-    font-size: 3vw;
+    font-size: 2em;
 }
 
 #date p {
@@ -152,16 +255,36 @@ ul li {
     position: absolute;
     z-index: 3;
     width: 30vw;
-    animation: imghoverout;
-    animation-duration: 1s;
     right: 4vw;
     top: 20vh;
 }
 
-.team_img img:hover{
-    animation-name: imghover;
-    animation-fill-mode: forwards;
-    animation-duration: 1s;
+footer {
+    position: fixed;
+    bottom: 1vh;
+    left: 0.5vw;
+    border-radius: 10px;
+    height: 12vh;
+    width: 12vw;
+    background: white;
+    box-shadow: 0px 0px 3px 0px black;
+}
+
+footer h1 {
+    color: grey;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    font-weight: 100;
+    font-size: 0.8em;
+}
+
+#UTSLOGO {
+    position: fixed;
+    bottom: 2vh;
+    left: 2vw;
+    border-radius: 8px;
+
+    width: 9vw;
 }
 
 @keyframes imghover {
@@ -196,4 +319,61 @@ ul li {
 
 #contact p {
     font-family: "MS Regular Wide";
+}
+
+
+#toggle-button{
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 4vw;
+    height: 1vh;
+}
+
+
+@media (max-width: 50em){
+    #title h1 {
+        width: fit-content;
+        font-size: 3em;
+    }
+    #title {
+        padding-top: 20vh;
+        width: 60vw;
+    }
+    li{
+        display: none;
+    }
+    ul {
+        display: none;
+    }
+    #toggle-button {
+        display:flex;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+    }
+    nav ul li {
+        text-align: center;
+        font-size: 1em;
+    }
+    #navbar-links.active{
+        display: flex;
+    }
+}
+
+#toggle-button .bar {
+    height: 3vh;
+    margin-top: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 6px;
 }

@@ -4,27 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/bh_icon.PNG">
+    <link rel="icon" href="assets/blues_hacks_icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Date - Blues Hacks</title>
 </head>
-<body>
-    <nav>
-        <a href="index.html"><img src="assets/bh_icon.PNG" alt="Blues Hacks Icon" id="icon"></a>
-        <ul>
+<body style="overflow: hidden;">
+    <nav id="navbar">
+        <a href="index.html" id="icon"><img src="assets/blues_hacks_logo_transparent.png" alt="Blues Hacks Icon" draggable="false"></a>
+        <a href="#" id="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <ul id="navbar-links">
             <li><a href="aboutus.html">About Us</a></li>
             <li><a href="date.html">Date</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeqTZdnjVm07LiEN52XHU8a5uv9qz8nPMs1wqfxRPM_opHkIA/viewform" target="_blank">Sign Up</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScCAMNcGOzYMIZpfaW6JtmOqaQXTuC3qT14VXQPaCX1kCWhgw/viewform" target="_blank">Sign Up</a></li>
         </ul>
     </nav>
-    <div class="bg">
+    <!-- <div class="bg">
         <img src="assets/Ellipse 1.svg" alt="" style="bottom: 0; left: 0;" draggable="false">
         <img src="assets/Ellipse 2.svg" alt="" style="top: 0; right:0;" draggable="false">
-    </div>
+    </div> -->
     <div id="date">
-        <h1 class="animate__animated animate__fadeInUp">The date of Blues Hacks 2023 is ...</h1>
-        <p class="animate__animated animate__fadeInUp">Coming Soon</p>
+        <h1 class="animate__animated animate__fadeInUp">Blues Hacks 2024 starts in ...</h1>
+        <div class="animate__animated animate__fadeInUp" id="timer">
+            <div>..<span>days</span></div>
+            <div>..<span>hours</span></div>
+            <div>..<span>minutes</span></div>
+            <div>..<span>seconds</span></div>
+        </div>
     </div>
+
+    <script>
+        function updateTimer() {
+        future  = Date.parse("2024-01-19T14:00:00Z");
+        now     = new Date();
+        diff    = future - now;
+
+        days  = Math.floor( diff / (1000*60*60*24) );
+        hours = Math.floor( diff / (1000*60*60) );
+        mins  = Math.floor( diff / (1000*60) );
+        secs  = Math.floor( diff / 1000 );
+
+        d = days;
+        h = hours - days  * 24;
+        m = mins  - hours * 60;
+        s = secs  - mins  * 60;
+
+        document.getElementById("timer").innerHTML =
+            '<div>' + d + '<span>days</span></div>' +
+            '<div>' + h + '<span>hours</span></div>' +
+            '<div>' + m + '<span>minutes</span></div>' +
+            '<div>' + s + '<span>seconds</span></div>' ;
+        }
+        setInterval('updateTimer()', 1000 );
+
+    </script>
+    <footer>
+        <h1>Powered By:</h1>
+        <a href="https://www.utschools.ca/" target="_blank"><img src="assets/UTS-Logo_HiRes__CMYK.jpg" id="UTSLOGO"></a>
+    </footer>
 </body>
+
+<script>
+    const toggleButton = document.getElementById("toggle-button")
+    const navbar = document.getElementById("navbar-links")
+    toggleButton.addEventListener('click', () => {
+        navbar.classList.toggle('active')
+        console.log('test')
+    })
+</script>
 </html>
